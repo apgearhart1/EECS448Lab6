@@ -5,4 +5,4 @@ Bugs.txt
 1. PeekFront() does not work properly, behaves like a getTop() for a stack.
 2. Dequeue() or the Queue Destructor does not appear to totally destroy the queue nodes because there are memory leaks.
 3. Dequeue() does not return value of what is being dequeued
-4. Dequeue() does not return a runtime error if there is nothing to dequeue.
+4. Dequeue() does not return a runtime error for if there is nothing to dequeue.

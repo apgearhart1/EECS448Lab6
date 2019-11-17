@@ -83,11 +83,14 @@ bool Test::testDequeue(){
     }
     for (int i = 0; i < 100; i++) {
         q.dequeue();
-        
+    
     }
     if (q.isEmpty()) {
         return true;
     }
+    
+    q.dequeue();
+    q.dequeue();
     return false;
 }
 
