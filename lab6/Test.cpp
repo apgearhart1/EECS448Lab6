@@ -40,10 +40,11 @@ Test::~Test(){
 
 bool Test::testPeek(){
     Queue q;
-    if (!q.isEmpty())
-    {
+    
         int k = 63;
+        int j = 23;
         q.enqueue(k);
+        q.enqueue(j);
         if (q.peekFront() == k)
         {
             return true;
@@ -52,12 +53,7 @@ bool Test::testPeek(){
         {
             return false;
         }
-    }
-    else
-    {
-        return true;
-    }
-
+    
 }
 
 bool Test::testEmpty(){
@@ -67,7 +63,10 @@ bool Test::testEmpty(){
         tester = false;
     }
   
-  q.enqueue(63);
+  for (int i = 0; i < 100; i++) {
+      q.enqueue(i);
+      
+  }
   if (q.isEmpty()) {
     tester = false;
   }
@@ -78,28 +77,29 @@ bool Test::testEmpty(){
 
 bool Test::testDequeue(){
     Queue q;
-    q.enqueue(649);
-    int k = q.peekFront();
-    q.enqueue(448);
-
-    q.dequeue();
-    if (k == q.peekFront()) {
+    for (int i = 0; i < 100; i++) {
+        q.enqueue(i);
+        
+    }
+    for (int i = 0; i < 100; i++) {
+        q.dequeue();
+        
+    }
+    if (q.isEmpty()) {
         return true;
     }
-    else{
-        return false;
-    }
+    return false;
 }
 
 bool Test::testEnqueue(){
     Queue q;
-    q.enqueue(33);
-    q.enqueue(43);
-    bool tester = true;
-    int k = 53;
-    q.enqueue(k);
-    if (k != q.peekFront()) {
-        tester = false;
+    for (int i = 0; i < 100; i++) {
+        q.enqueue(i);
+        
     }
-    return tester;
+    if (q.isEmpty()) {
+        return false;
+    }
+    return true;
 }
+
